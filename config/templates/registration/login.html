@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+	{% if form.errors %}
+		<div class="alert alert-danger" role="alert">
+			Логин/пароль неправильный
+		</div>
+	{% endif %}
+	<form method="Post" actoin="{% url 'login' %}">
+	{% csrf_token %}
+	<p>{{form.username}}</p>
+	<p>{{form.password}}</p>
+	<input type="submit" value="OK" name="submit">
+	</form>
+{% endblock %}

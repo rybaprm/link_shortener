@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     <script>
+       function onSubmit(token) {
+         document.getElementById("main-form").submit();
+       }
+     </script>
+<form id='main-form' method="POST">
+	{% csrf_token %}
+	{{form.as_p}}
+	<button class="g-recaptcha" data-sitekey="6LeDCd4UAAAAAK_cVMoQw59a0slKidAM-RpS2vmT" data-callback='onSubmit'>OK</button>
+	<!--
+	<input type="Submit" value="OK">
+	-->
+</form>
+{% endblock %}

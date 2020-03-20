@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">SHORT LINK</th>
+      <th scope="col">LONG LINK</th>
+    </tr>
+  </thead>
+  <tbody>
+	<td>{{object.short_link}}</td>
+	<td>{{object.long_link}}</td>
+{% endblock %}

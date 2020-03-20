@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+	{% if user.is_authenticated %}
+		<p>User name - {{user.username}}</p>
+		<p>First name - {{user.first_name}}</p>
+		<p>Last name - {{user.last_name}}</p>
+		<p>Email - {{user.email}}</p>
+		<p>Plan - {{user.plan}}</p>
+	{% else %}
+		<p>У вас нет прав</p>
+	{% endif %}
+{% endblock %}
